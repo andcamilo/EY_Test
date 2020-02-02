@@ -16,5 +16,4 @@ class EmailForm(forms.ModelForm):
         """Form settings."""
 
         model = Email
-        fields = ('persona','Email')
-
+        fields = ('persona','Email','Orden')

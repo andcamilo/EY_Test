@@ -27,6 +27,7 @@ class Email(models.Model):
 
     persona = models.ForeignKey('persona', on_delete=models.CASCADE)
     Email = models.CharField(max_length=100, blank=True)
+    Orden = models.IntegerField(default=0)
 
     def __str__(self):
         return self.Email
