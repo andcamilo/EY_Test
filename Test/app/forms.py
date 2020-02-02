@@ -1,13 +1,13 @@
 from django import forms
-from app.models import Profile, Email
+from app.models import Persona, Email
 
-class ProfileForm(forms.ModelForm):
+class PersonaForm(forms.ModelForm):
 
     class Meta:
         """Form settings."""
 
-        model = Profile
-        fields = ('user','PathernalLastName', 'MathernalLastName','Edad','Sexo', 'Cedula')
+        model = Persona
+        fields = ('Name','PathernalLastName', 'MathernalLastName','Edad','Sexo', 'Cedula')
 
 
 class EmailForm(forms.ModelForm):
@@ -16,5 +16,5 @@ class EmailForm(forms.ModelForm):
         """Form settings."""
 
         model = Email
-        fields = ('profile','Email')
+        fields = ('persona','Email')
 

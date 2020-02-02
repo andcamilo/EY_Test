@@ -1,24 +1,24 @@
 from django.contrib  import admin 
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from app.models import Profile, Email
+from app.models import Persona, Email
 from django.contrib.auth.models import User
 
 
-@admin.register(Profile)
+@admin.register(Persona)
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('user','PathernalLastName','MathernalLastName','Cedula','Sexo', 'Edad')
+    list_display = ('Name','PathernalLastName','MathernalLastName','Cedula','Sexo', 'Edad')
 
 
 @admin.register(Email)
-class ProfileAdmin(admin.ModelAdmin):
-    list_display = ('profile','Email')
+class EmailAdmin(admin.ModelAdmin):
+    list_display = ('persona','Email')
 
 
 
 class ProfileInline(admin.StackedInline):
-    model = Profile
+    model = Persona
     can_delete = False
-    verbose_name_plural = 'profiles'
+    verbose_name_plural = 'personas'
 
 
 class UserAdmin(BaseUserAdmin):

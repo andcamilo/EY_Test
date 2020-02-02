@@ -5,13 +5,13 @@ from django.urls import reverse
 
 # Create your models here.
 
-class Profile(models.Model):
+class Persona(models.Model):
     SEX_CHOICES = (
         ('Masculino', 'Masculino'),
         ('Feminino', 'Feminino'),
     )
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    Name = models.CharField(max_length=100, blank=True)
     PathernalLastName = models.CharField(max_length=100, blank=True)
     MathernalLastName = models.CharField(max_length=100, blank=True)
     Edad = models.IntegerField(blank=True, default=0)
@@ -20,12 +20,13 @@ class Profile(models.Model):
   
 
     def __str__(self):
-        return self.user.username
+        return self.Name
+
 
 class Email(models.Model):
 
-    profile = models.ForeignKey('profile', on_delete=models.CASCADE)
+    persona = models.ForeignKey('persona', on_delete=models.CASCADE)
     Email = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
-        return self.Email.Email
+        return self.Email
