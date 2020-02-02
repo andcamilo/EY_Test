@@ -55,7 +55,7 @@
                                 </td>
 
                                 <td>Editar</td>
-                                <td>Eliminar</td>
+                                <td><a href="{% url "app:persona_delete" per.id %}">Eliminar</a></td>
 
                                 
                                
@@ -69,7 +69,7 @@
                             </tbody>
                         </table>
 
-                    <button>Agregar correo</button>
+                        <button onclick="location.href='{% url 'app:email_add' %}'" type="button" class="btn mb-1 btn-flat btn-dark">Agregar Correo</button>
 
 
                     </div>

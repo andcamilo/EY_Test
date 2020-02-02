@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_content %}
+
+{% endblock%}
+
+
+{% block container %}
+<div class="container-fluid">
+        <div class="row">
+     
+                <div class="col-lg-12 col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+
+
+
+                            <form action="{% url 'app:persona_delete' persona.id %}" onsubmit="return confirmation()" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                
+                    
+                                {# Name field #}
+                                <div class="col-lg-4">
+                                        <label>Nombre:</label>
+ 
+                                        <h3 style="font-weight: 50;">
+                                                {{ persona.Name }}
+                                           
+                                        </h3>
+                                   
+                                </div>
+                                <hr>
+                                {# PathernalLastName field #}
+                                <div class="col-lg-4">
+                                        <label>Apellido Paterno:</label>
+ 
+                                        <h3 style="font-weight: 50;">
+                                                {{ persona.PathernalLastName }}
+                                           
+                                        </h3>
+                                   
+                                </div>
+                                <hr>
+                                {# MathernalLastName field #}
+                                <div class="col-lg-4">
+                                        <label>Apellido Materno:</label>
+ 
+                                        <h3 style="font-weight: 50;">
+                                                {{ persona.MathernalLastName }}
+                                           
+                                        </h3>
+                                   
+                                </div>
+                                <hr>
+                                {# Cedula field #}
+                                <div class="col-lg-4">
+                                        <label>Cédula:</label>
+ 
+                                        <h3 style="font-weight: 50;">
+                                                {{ persona.cedula }}
+                                           
+                                        </h3>
+                                   
+                                </div>
+                                <hr>
+                                {# Edad field #}
+                                <div class="col-lg-4">
+                                        <label>Edad:</label>
+ 
+                                        <h3 style="font-weight: 50;">
+                                                {{ persona.Edad }}
+                                           
+                                        </h3>
+                                   
+                                </div>
+                                <hr>
+                                {# Sexo field #}
+                                <div class="col-lg-4">
+                                        <label>Sexo:</label>
+ 
+                                        <h3 style="font-weight: 50;">
+                                                {{ persona.Sexo }}
+                                           
+                                        </h3>
+                                   
+                                </div>
+                                <hr>
+
+                       
+                             
+                      
+                
+                                <button type="submit" class="btn btn-danger  col-lg-4 mt-3">Eliminar</button>
+                            </form>
+
+                            <script type="text/javascript">
+                            function  confirmation()
+                            {
+                                if(confirm("¿Desea Eliminar este archivo?")){
+                                    return true;
+                                }
+                                else{
+                                    return false;
+                                }
+                            }
+                            
+
+                            </script>
+             
+                        </div>
+                     </div>
+                </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+
+{% endblock %}

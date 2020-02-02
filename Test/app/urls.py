@@ -13,10 +13,23 @@ urlpatterns = [
     ),
 
     path (
+    route='email',
+    view= views.CreateEmailView.as_view(),
+    name='email_add'
+
+    ),
+
+    path (
         route='list',
         view= views.ListPersonaView.as_view(),
         name='list_persona'
     ),
+
+    path(
+        route='persona_delete/<int:id>/', 
+        view=views.DeletePersonaView.as_view(),
+        name='persona_delete'
+),
    
 ]
       
