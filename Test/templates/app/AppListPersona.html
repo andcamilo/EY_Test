@@ -22,7 +22,7 @@
                                 <th scope="col">Edad</th>
                                 <th scope="col">Sexo</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Editar</th>
+                                <th scope="col">Consultar</th>
                                 <th scope="col">Eliminar</th>
                                 
                                
@@ -54,7 +54,7 @@
                                 {% endfor %}
                                 </td>
 
-                                <td>Editar</td>
+                                <td><a href="{% url "app:detail_persona" per.id %}">Consultar</a></td>
                                 <td><a href="{% url "app:persona_delete" per.id %}">Eliminar</a></td>
 
                                 

@@ -29,8 +29,22 @@ urlpatterns = [
         route='persona_delete/<int:id>/', 
         view=views.DeletePersonaView.as_view(),
         name='persona_delete'
-),
-   
+    ),
+
+
+    path(
+        route='update_persona/<int:id>/', 
+        view=views.UpdatePersonalView.as_view(),
+        name='update_persona'
+    ), 
+
+    path(
+        route='detail_persona/<int:id>/',
+        view=views.DetailPersonaView.as_view(),
+        name='detail_persona'
+    ),
+
+    
 ]
       
     

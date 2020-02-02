@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_content %}
+
+{% endblock%}
+
+{% block container %}
+<div class="container-fluid">
+        <div class="row">
+     
+                <div class="col-lg-12 col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="{% url 'app:update_persona' persona.id %}" onsubmit="return confirmation()" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                
+     
+                                {# Name field #}
+                                <div class="col-lg-4">
+                                    <label>Nombre:</label>
+                                    <input
+                                        class="form-control {% if form.Name.errors %}is-invalid{% endif %}"
+                                        type="text"
+                                        name="Name"
+                                        placeholder="Nombre"
+                                        value="{% if form.errors %}{{ form.Name.value }}{% else %}{{ persona.Name }}{% endif %}"
+                                    />
+                                    <div class="invalid-feedback">
+                                        {% for error in form.Name.errors %}
+                                            {{ error }}
+                                        {% endfor%}
+                                    </div>
+                                </div>                    
+                                <hr>
+                                {# PathernalLastName field #}
+                                <div class="col-lg-4">
+                                    <label>Apellido Paterno:</label>
+                                    <input
+                                        class="form-control {% if form.PathernalLastName.errors %}is-invalid{% endif %}"
+                                        type="text"
+                                        name="PathernalLastName"
+                                        placeholder="Apellido Paterno"
+                                        value="{% if form.errors %}{{ form.PathernalLastName.value }}{% else %}{{ persona.PathernalLastName  }}{% endif %}"
+                                    />
+                                    <div class="invalid-feedback">
+                                        {% for error in form.PathernalLastName.errors %}
+                                            {{ error }}
+                                        {% endfor%}
+                                    </div>
+                                </div>                    
+                                <hr>
+                                {# MathernalLastName field field #}
+                                <div class="col-lg-4">
+                                    <label>Apellido Materno:</label>
+                                    <input
+                                        class="form-control {% if form.MathernalLastName.errors %}is-invalid{% endif %}"
+                                        type="text"
+                                        name="MathernalLastName"
+                                        placeholder="Apellido Materno"
+                                        value="{% if form.errors %}{{ form.MathernalLastName.value }}{% else %}{{ persona.MathernalLastName  }}{% endif %}"
+                                    />
+                                    <div class="invalid-feedback">
+                                        {% for error in form.MathernalLastName.errors %}
+                                            {{ error }}
+                                        {% endfor%}
+                                    </div>
+                                </div>                    
+                                <hr>
+                                {# Celula field #}
+                                <div class="col-lg-4">
+                                    <label>Célula:</label>
+                                    <input
+                                        class="form-control {% if form.Celula.errors %}is-invalid{% endif %}"
+                                        type="text"
+                                        name="Celula"
+                                        placeholder="Célula"
+                                        value="{% if form.errors %}{{ form.Celula.value }}{% else %}{{ persona.Celula }}{% endif %}"
+                                    />
+                                    <div class="invalid-feedback">
+                                        {% for error in form.Celula.errors %}
+                                            {{ error }}
+                                        {% endfor%}
+                                    </div>
+                                </div>                    
+                                <hr>
+                                {# Edad field #}
+                                <div class="col-lg-4">
+                                    <label>Edad:</label>
+                                    <input
+                                        class="form-control {% if form.Edad.errors %}is-invalid{% endif %}"
+                                        type="text"
+                                        name="Edad"
+                                        placeholder="Edad"
+                                        value="{% if form.errors %}{{ form.Edad.value }}{% else %}{{ persona.Edad }}{% endif %}"
+                                    />
+                                    <div class="invalid-feedback">
+                                        {% for error in form.Edad.errors %}
+                                            {{ error }}
+                                        {% endfor%}
+                                    </div>
+                                </div>                    
+                                <hr>
+                                {# Sexo field #}
+                                <div class="col-lg-4">
+                                    <label>Sexo:</label>
+                                    <input
+                                        class="form-control {% if form.Sexo.errors %}is-invalid{% endif %}"
+                                        type="text"
+                                        name="Sexo"
+                                        placeholder="Sexo"
+                                        value="{% if form.errors %}{{ form.Sexo.value }}{% else %}{{ persona.Sexo }}{% endif %}"
+                                    />
+                                    <div class="invalid-feedback">
+                                        {% for error in form.Sexo.errors %}
+                                            {{ error }}
+                                        {% endfor%}
+                                    </div>
+                                </div>                    
+                                <hr>
+
+                                {# Email field #}
+                                <div class="col-lg-4">
+                                    <label>Email:</label>
+                                    {% for correo in Email%}
+                                    {% if correo.persona.id == persona.id %}
+
+                                    <input
+                                        class="form-control {% if form.Email.errors %}is-invalid{% endif %}"
+                                        type="email"
+                                        name="Email"
+                                        placeholder="{{ correo.Email }}"
+                                        value="{% if form.errors %}{{ form.Email.value }}{% else %}{{ Email.Email }}{% endif %}"
+
+                                    />
+                                    <div class="invalid-feedback">
+                                        {% for error in form.Email.errors %}
+                                            {{ error }}
+                                        {% endfor%}
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>                    
+                                <hr>
+
+                             
+                      
+                
+                                <button type="submit" class="btn btn-primary  col-lg-4 mt-3">Actualizar</button>
+                            </form>
+                            
+
+                            <script type="text/javascript">
+                                function  confirmation()
+                                {
+                                    if(confirm("¿Desea modificar el archivo?")){
+                                        return true;
+                                    }
+                                    else{
+                                        return false;
+                                    }
+                                }
+                                
+    
+                                </script>
+                        </div>
+                     </div>
+                </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+
+{% endblock %}
