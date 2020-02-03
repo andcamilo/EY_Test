@@ -48,10 +48,7 @@
         <div class="nav-header">
         
                 <a href="#">
-                    <b class="logo-abbr"><img width="150" height="80" src="{% static 'images/prueba.jpg' %}" alt=""> </b>
-                    <span class="logo-compact"><img width="550" height="80" src="{% static 'images/prueba.jpg' %}" alt=""></span>
                     <span class="brand-title">
-                        <img width="250" height="80" src="{% static 'images/prueba.jpg' %}" alt="">
                     </span>
                 </a>
         
@@ -72,99 +69,7 @@
                     </div>
                 </div>
            
-                <div class="header-right">
-                    <ul class="clearfix">
-                        <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
-                                <i class="mdi mdi-email-outline"></i>
-                                <span class="badge badge-pill gradient-1">3</span>
-                            </a>
-                            <div class="drop-down animated fadeIn dropdown-menu">
-                                <div class="dropdown-content-heading d-flex justify-content-between">
-                                    <span class="">3 New Messages</span>  
-                                    <a href="javascript:void()" class="d-inline-block">
-                                        <span class="badge badge-pill gradient-1">3</span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li class="notification-unread">
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/1.jpg' %}" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Saiful Islam</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="notification-unread">
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/2.jpg' %}" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Adam Smith</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Can you do me a favour?</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/3.jpg' %}" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Barak Obama</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="{% static 'images/avatar/4.jpg' %}" alt="">
-                                                <div class="notification-content">
-                                                    <div class="notification-heading">Hilari Clinton</div>
-                                                    <div class="notification-timestamp">08 Hours ago</div>
-                                                    <div class="notification-text">Hello</div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    
-                                </div>
-                            </div>
-                        </li>
-                        
-
-                        <li class="icons dropdown">
-                            <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
-                                <span class="activity active"></span>
-           
-                                <img src="{% static 'images/user/1.png' %}" class="rounded-circle" height="50" />
-                              
-                            </div>
-                            <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
-                                <div class="dropdown-content-body">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="icon-user"></i> <span>Perfil</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="icon-user"></i> <span>Cambiar contraseña</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void()">
-                                                <i ></i> <span>Notificaciones</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
-                                            </a>
-                                        </li>
-                                        
-                                        <hr class="my-2">
-                                      
-                                        <li><a href="#"><i class="icon-key"></i> <span>Cerrar Sesión</span></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+          
             </div>
         </div>
         <!--**********************************
@@ -180,13 +85,25 @@
                     <li class="nav-label">Tablero</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-note menu-icon"></i><span class="nav-text">Contabilidad</span>
+                            <i class="icon-note menu-icon"></i><span class="nav-text">Agregar </span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="#">Formatos</a></li>
+                            <li><a href="{% url "app:persona_add"%}">Agregar Persona</a></li>
+                            <li><a href="{% url "app:email_add"%}">Agregar Correo</a></li>
 
                         </ul>
                     </li>
+
+                    <li>
+                            <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                                <i class="icon-note menu-icon"></i><span class="nav-text">Lista</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="{% url "app:list_persona"%}">Ir a lista</a></li>
+   
+    
+                            </ul>
+                        </li>
         
          
 

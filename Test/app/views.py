@@ -5,6 +5,7 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, DeleteView, TemplateView, UpdateView
 from app.forms import PersonaForm,EmailForm
 from app.models import Persona, Email
+from django.db.models import Q
 # Create your views here.
 
 class CreatePersonaView(CreateView):
@@ -17,7 +18,16 @@ class CreatePersonaView(CreateView):
 class ListPersonaView(TemplateView):
 
     template_name = 'app/AppListPersona.html'
-    
+
+
+    def get_object(self, request):
+        queryset = request.GET.get("buscar")
+        if queryset:
+            email = Email.objects.filter(
+                Q(Email_icontains = queryset )
+            ).distinct()
+        return render(request,'app/AppListPersona.html',{'email': email})
+
 
     def get_context_data(self,*args,**kwargs):
         persona = Persona.objects.all()
