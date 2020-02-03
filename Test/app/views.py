@@ -8,6 +8,8 @@ from app.models import Persona, Email
 from django.db.models import Q
 # Create your views here.
 
+
+
 class CreatePersonaView(CreateView):
     """Create a new persona."""
 
