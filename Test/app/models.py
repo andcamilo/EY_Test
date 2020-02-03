@@ -6,6 +6,7 @@ from django.urls import reverse
 # Create your models here.
 
 class Persona(models.Model):
+    """ Modelos de la base de datos de Personas. """
     SEX_CHOICES = (
         ('Masculino', 'Masculino'),
         ('Feminino', 'Feminino'),
@@ -24,6 +25,7 @@ class Persona(models.Model):
 
 
 class Email(models.Model):
+    """ Modelos de la base de datos de Email. """
 
     persona = models.ForeignKey('persona', on_delete=models.CASCADE)
     Email = models.CharField(max_length=100, blank=True)

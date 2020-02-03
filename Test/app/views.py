@@ -11,13 +11,15 @@ from django.db.models import Q
 
 
 class CreatePersonaView(CreateView):
-    """Create a new persona."""
+    """Creación de una nueva persona."""
 
     template_name = 'app/AppAddPersona.html'
     form_class = PersonaForm
     success_url = reverse_lazy('app:list_persona')
 
 class ListPersonaView(TemplateView):
+    """Enlista las  personas y correos existentes."""
+
 
     template_name = 'app/AppListPersona.html'
 
@@ -39,6 +41,8 @@ class ListPersonaView(TemplateView):
 
 
 class DetailPersonaView(DetailView):
+    """Visualiza los detalles de la  persona seleccionada ."""
+
    
     template_name = 'app/AppDetailPersona.html'
 
@@ -54,6 +58,8 @@ class DetailPersonaView(DetailView):
         return context
 
 class DeletePersonaView( DeleteView):
+        """Elimina a la persona seleccionada."""
+
     
     template_name = 'app/AppDeletePersona.html'
 
@@ -67,7 +73,7 @@ class DeletePersonaView( DeleteView):
 
     
 class CreateEmailView(CreateView):
-    """Create a new Email."""
+    """Creación de un nuevo correo."""
 
     template_name = 'app/AppAddEmail.html'
     form_class = EmailForm
@@ -75,7 +81,7 @@ class CreateEmailView(CreateView):
 
 
 class UpdateEmailView( UpdateView):
-    """Update Email view."""
+    """Genera el orden de los correos administrado por el ususario."""
 
     template_name = 'app/AppUpdateEmail.html'
     model = Email
@@ -93,7 +99,7 @@ class UpdateEmailView( UpdateView):
 
 
 class UpdatePersonalView(UpdateView):
-    """Update Personal view."""
+    """Actualiza los datos del usuario seleccionado ."""
 
     template_name = 'app/AppUpdatePersona.html'
     model = Persona
