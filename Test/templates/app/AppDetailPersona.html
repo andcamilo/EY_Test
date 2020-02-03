@@ -102,7 +102,7 @@
                                                 {% for correo in Email%}
                                                 {% if correo.persona.id == persona.id %}
 
-                                                {{ correo.Email }}
+                                             <a href="{% url "app:update_email" correo.id %}">{{ correo.Email }} </a>   
                                                 {% endif %}
                                                 {% endfor %}
                                            

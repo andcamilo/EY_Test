@@ -29,5 +29,8 @@ class Email(models.Model):
     Email = models.CharField(max_length=100, blank=True)
     Orden = models.IntegerField(default=0)
 
+    class Meta:
+        ordering  = ['Orden']
+
     def __str__(self):
         return self.Email

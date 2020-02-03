@@ -8,9 +8,24 @@
 <div class="container-fluid">
         <div class="row">
 
+  
+
             <div class="col-lg-12 col-xl-12">
                 <div class="card">
                     <div class="card-body">
+                            <form method="GET">
+                                    <div class="topnav">
+                                            <button type="submit" class="btn mb-1 btn-rounded btn-danger" >Buscar</button>
+        
+                                            <input type="text" placeholder="Buscar..." name="buscar">
+                                    </div>
+                            </form>
+
+
+                            <br>
+
+                                  
+             
                         
                         <table class="table">
                             <thead class="thead-dark">
@@ -47,6 +62,7 @@
                                 {% for correo in email %}
                                 {% if correo.persona.id == per.id %}
                                     {{ correo.Email }}
+                                    {{ correo.Orden }}
                                 
                                     <br>
 

@@ -39,6 +39,12 @@ urlpatterns = [
     ), 
 
     path(
+        route='update_email/<int:id>', 
+        view=views.UpdateEmailView.as_view(),
+        name='update_email'
+    ), 
+
+    path(
         route='detail_persona/<int:id>/',
         view=views.DetailPersonaView.as_view(),
         name='detail_persona'

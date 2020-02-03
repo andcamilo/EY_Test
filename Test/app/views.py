@@ -17,6 +17,7 @@ class CreatePersonaView(CreateView):
 class ListPersonaView(TemplateView):
 
     template_name = 'app/AppListPersona.html'
+    
 
     def get_context_data(self,*args,**kwargs):
         persona = Persona.objects.all()
@@ -61,6 +62,22 @@ class CreateEmailView(CreateView):
     success_url = reverse_lazy('app:list_persona')
 
 
+class UpdateEmailView( UpdateView):
+    """Update Email view."""
+
+    template_name = 'app/AppUpdateEmail.html'
+    model = Email
+    fields = ['Email', 'Orden']
+
+
+    def get_object(self):
+        id_ = self.kwargs.get("id")
+        return get_object_or_404(Email, id=id_)
+
+    def get_success_url(self):
+        """Return to user's profile."""
+        id_ = self.object.id
+        return reverse('app:list_persona')
 
 
 class UpdatePersonalView(UpdateView):
