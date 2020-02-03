@@ -58,7 +58,7 @@ class DetailPersonaView(DetailView):
         return context
 
 class DeletePersonaView( DeleteView):
-        """Elimina a la persona seleccionada."""
+    """Elimina a la persona seleccionada."""
 
     
     template_name = 'app/AppDeletePersona.html'
